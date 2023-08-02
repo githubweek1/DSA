@@ -18,13 +18,19 @@ int main() {
 
 // function to print all the divisors
 void divisor(int n) {
-    for (int i = 1; i*i <= n; i++) {
+    int i;
+
+    // print all divisors from 1 to sqrt(n)
+    for (i = 1; i*i < n; i++) {
         if (n % i == 0) {
             cout << i << " ";
+        }
+    }
 
-            if (i != n / i) {
-                cout << n / i << " ";
-            }
+    // print all divisors from sqrt(n) to n
+    for (; i >= 1; i--) {
+        if (n%i == 0) {
+            cout << n / i << " ";
         }
     }
     cout << endl;
