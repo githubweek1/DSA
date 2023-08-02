@@ -14,6 +14,7 @@ int main() {
     primeFactors(n);
 }
 
+// function to get prime factors
 void primeFactors(int n) {
     if (n <= 1) return;
 
