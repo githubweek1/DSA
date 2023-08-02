@@ -4,7 +4,7 @@
 using namespace std;
 
 // function prototype
-int computerPower(int a, int b);
+int power(int a, int b);
 
 // main function
 int main() {
@@ -16,18 +16,21 @@ int main() {
     cout << "b: ";
     cin >> b;
 
-    cout << "pow(a, b): " << computerPower(a, b) << endl;
+    cout << "pow(a, b): " << power(a, b) << endl;
 }
 
 // function to computer power
-int computerPower(int a, int b) {
-    if (b == 0)
-        return 1;
-    
-    int result = 1;
-    
-    for (int i = 0; i < b; i++) 
-        result = result * a;
-    
-    return result;
+int power(int a, int b) {
+
+    if (b == 0) return 1;
+
+    int temp = power(a, b / 2);
+    temp = temp * temp;
+
+    if (b % 2 == 0) {
+        return temp;
+    }
+    else {
+        return temp * a;
+    }
 }
