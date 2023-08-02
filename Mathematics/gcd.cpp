@@ -20,11 +20,8 @@ int main() {
 // function to calculate gcd of a and b
 // using euclidian algorithm
 int gcd(int a, int b) {
-    while (a != b) {
-        if (a > b)
-            a = a - b;
-        else
-            b = b - a;
-    }
-    return a;
+    if (b == 0)
+        return a;
+    else
+        return gcd(b, a % b);
 }
