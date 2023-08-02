@@ -18,13 +18,13 @@ int main() {
 }
 
 // function to calculate gcd of a and b
+// using euclidian algorithm
 int gcd(int a, int b) {
-    int res = min(a, b);
-
-    while (res > 0) {
-        if (a % res == 0 && b % res == 0)
-            break;
-        res--;
+    while (a != b) {
+        if (a > b)
+            a = a - b;
+        else
+            b = b - a;
     }
-    return res;
+    return a;
 }
