@@ -1,5 +1,7 @@
 // C++ program to get all the prime numbers
 // less than or equal to n
+// using sieve of erastothenes
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -16,7 +18,7 @@ int main() {
 }
 
 // function to get all the prime
-// number <= n
+// number <= n using sieve of erastothenes
 void sieve(int n) {
     vector<bool> isPrime(n+1, true);
 
