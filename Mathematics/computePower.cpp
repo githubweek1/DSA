@@ -21,16 +21,14 @@ int main() {
 
 // function to computer power
 int power(int a, int b) {
+    int result = 1;
 
-    if (b == 0) return 1;
-
-    int temp = power(a, b / 2);
-    temp = temp * temp;
-
-    if (b % 2 == 0) {
-        return temp;
+    while (b > 0) {
+        if (b % 2 != 0)
+            result = result * a;
+        
+        a = a * a;
+        b = b / 2;
     }
-    else {
-        return temp * a;
-    }
+    return result;
 }
