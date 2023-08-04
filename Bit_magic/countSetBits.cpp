@@ -29,8 +29,14 @@ int countBits(int n) {
 
     // check for positive number and zero
     while (n != 0) {
-        count = count + (n&1);
-        n = n >> 1;
+        // using brian kerningam algorithm
+        // time O(no. set bits)
+        int count = 0;
+        while (n > 0) {
+            n = n & (n - 1);
+            count++;
+        }
+        return count;
     }
     return count;
 }
