@@ -17,11 +17,6 @@ int main() {
 
 // function to check if a number is power of 2
 bool isPower(int n) {
-    if (n == 0)
-        return false;
-        
     // using brian karningham algorithm
-    n = n & (n - 1);
-
-    return (n == 0);
+    return (n && (n & (n - 1)) == 0);
 }
